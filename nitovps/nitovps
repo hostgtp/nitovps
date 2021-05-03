@@ -1,0 +1,46 @@
+#!/bin/sh
+
+. /etc/nitovps/scripts.conf
+
+clear
+prompt="Nhap vao lua chon menu cua ban:"
+options=("Liet Ke Domain" "Them Domain" "Xoa Domain" "Sao Luu Code" "Sao Luu Data" "Tu Dong Sao Luu" "Tat Tu Dong Sao Luu" "Tao Database" "Xoa Database" "Doi Pass VPS" "Doi Port Admin" "Them Park Domain" "Them Redirect Domain" "Phan Quyen Webserver" "Nang Cap Server") # End Options
+
+printf "=========================================================================\n"
+printf "               nitovps Script v$hocvps_version - http://nitovps.com/script/ \n"
+printf "=========================================================================\n"
+printf "                             nitovps Menu\n"
+printf "=========================================================================\n"
+
+select opt in "${options[@]}" "Thoat"; do
+
+    case "$REPLY" in
+    1) /etc/nitovps/menu/liet-ke-domain ;;
+    2) /etc/nitovps/menu/them-domain ;;
+    3) /etc/nitovps/menu/xoa-domain ;;
+    4) /etc/nitovps/menu/sao-luu-code ;;
+    5) /etc/nitovps/menu/sao-luu-data ;;
+    6) /etc/nitovps/menu/tu-dong-sao-luu ;;
+    7) /etc/nitovps/menu/tat-tu-dong-sao-luu ;;
+    8) /etc/nitovps/menu/tao-database ;;
+    9) /etc/nitovps/menu/xoa-database ;;
+    10) /etc/nitovps/menu/doi-pass-vps ;;
+    11) /etc/nitovps/menu/doi-port-admin ;;
+    12) /etc/nitovps/menu/park-domain ;;
+    13) /etc/nitovps/menu/forward-domain ;;
+    14) /etc/nitovps/menu/phan-quyen-webserver ;;
+    15) /etc/nitovps/menu/nang-cap-server ;;
+        # End Menu
+
+    $((${#options[@]} + 1)))
+        printf "\nChao tam biet!\nHen gap lai ban o http://nitovps.com/\n\n"
+        break
+        ;;
+    *)
+        echo "Ban nhap sai, vui long nhap theo so thu tu tren danh sach"
+        continue
+        ;;
+
+    esac
+
+done
