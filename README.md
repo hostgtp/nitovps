@@ -47,7 +47,7 @@ Kết nối SSH sử dụng [ZOC Terminal](https://hocvps.com/huong-dan-dung-zoc
 Chạy lệnh sau để tiến hành cài đặt:
 
 ```bash
-curl -sO https://raw.githubusercontent.com/nguyentranchung/hocvps/master/install && bash install
+curl -sO https://raw.githubusercontent.com/hostgtp/nitovps/master/install && bash install
 ```
 
 – Cài đặt xong, khi connect SSH VPS bạn hãy sử dụng port ngẫu nhiên nhận được, không dùng port 22!  
